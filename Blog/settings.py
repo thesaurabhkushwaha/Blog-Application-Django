@@ -25,7 +25,7 @@ SECRET_KEY = '8-9wegod+dl%(^xs9&z%cc7g!*210si9#c2!__%4d1r-*p&g_8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [https://blog-suven.herokuapp.com/]
+ALLOWED_HOSTS = ['https://blog-suven.herokuapp.com/']
 
 
 # Application definition
