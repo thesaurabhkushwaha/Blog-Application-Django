@@ -25,7 +25,7 @@ SECRET_KEY = '8-9wegod+dl%(^xs9&z%cc7g!*210si9#c2!__%4d1r-*p&g_8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [https://blog-suven.herokuapp.com/]
 
 
 # Application definition
@@ -119,9 +119,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 EMAIL_HOST  =   'smtp.gmail.com'
 EMAIL_HOST_USER =   'saurabhkratos619@gmail.com'
 EMAIL_HOST_PASSWORD =   '1999@BLazer1999'
 EMAIL_PORT  =   587
 EMAIL_USE_TLS   =   True
+
+
+from decouple import config
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+
+from dj_database_url import parse as dburl
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
