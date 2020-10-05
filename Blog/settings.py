@@ -20,7 +20,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8-9wegod+dl%(^xs9&z%cc7g!*210si9#c2!__%4d1r-*p&g_8'
+#SECRET_KEY = '8-9wegod+dl%(^xs9&z%cc7g!*210si9#c2!__%4d1r-*p&g_8'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -127,5 +128,3 @@ EMAIL_HOST_USER =   'saurabhkratos619@gmail.com'
 EMAIL_HOST_PASSWORD =   '1999@BLazer1999'
 EMAIL_PORT  =   587
 EMAIL_USE_TLS   =   True
-
-
