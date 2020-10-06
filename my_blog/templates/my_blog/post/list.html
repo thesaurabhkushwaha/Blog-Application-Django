@@ -4,7 +4,7 @@
 
 {%	block content	%}
 
-	<h1>My	Blog</h1><hr>
+	<h1>My Blog</h1><hr>
 
 	{%	for	post in	posts %}
 		<h2>
@@ -16,7 +16,7 @@
 
 	{%	endfor	%}
 
-	{%	include	"my_blog/pagination.html"	with	page=posts	%}
+	<!--{%	include	"my_blog/pagination.html"	with	page=posts	%}-->
 	{%	include	"my_blog/pagination.html" with page=page_obj %}
 
 {%	endblock	%}
